@@ -1,20 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Routes ,Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '../containers/Home'
+import Home from '../containers/Home';
+import Checkout from '../containers/Checkout';
+import Information from '../containers/Information';
+import Payment from '../containers/Payment';
+import Success from '../containers/Success';
+import NotFound from '../containers/NotFound';
+import Layout from '../components/Layout';
 
-import Checkout from '../containers/Checkout'
-
-import Information from '../containers/Information'
-
-import Payment from '../containers/Payment'
-
-import Success from '../containers/Success'
-
-import NotFound from '../containers/NotFound'
 const App = () => {
-    return(
+  return (
     <BrowserRouter>
+      <Layout>
         <Routes>
             <Route path='/welcome' element={<Home/>} />
             <Route path="/checkout" element={<Checkout/>} />
@@ -23,8 +21,9 @@ const App = () => {
             <Route  path="/checkout/success" element={<Success/>} />
             <Route element={<NotFound/>} />
         </Routes>
-    </BrowserRouter>)
+      </Layout>
+    </BrowserRouter>
+  );
 }
-
 
 export default App;
